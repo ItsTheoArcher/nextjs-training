@@ -2,33 +2,73 @@ import Image from "next/image";
 import ThemeSwitch from "@/components/theme-switch";
 import { generalData } from "@/data/general";
 import { contentData } from "@/data/content";
-import type { Content } from "@/data/content";
+import type { Content, Institution } from "@/data/content";
 
 type ContentProps = Content;
 
-const Content: React.FC<ContentProps> = ({ title, items }) => {
+const Roles: React.FC<Institution> = ({ roles }) => {
   return (
-    <section className="my-14 text-sm">
-      <h3 className="mb-6">{title}</h3>
-      <div className="flex flex-col gap-6">
-        {items.map((item, index) => {
+    <section className="text-sm">
+      <ul className="timeline timeline-snap-icon timeline-vertical timeline-compact">
+        {roles.map((role, index) => {
           return (
-            <div className="flex" key={index}>
-              <div className="mr-8 max-w-[100px] w-full text-slate-400 dark:text-slate-400">
-                {item.date}
-              </div>
-              <div className="flex flex-col flex-1">
-                <h4>{item.title}</h4>
+          <li key={index}>
+            { index !== 0 ? (<hr/>) : null}
+            <div className="timeline-middle mx-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="timeline-end">
+              <div className="flex flex-col my-1">
+                <h4 className="font-semibold text-slate-600 dark:text-gray-400">{role.title}</h4>
+                <div className="text-xs text-slate-400 dark:text-slate-400">
+                  {role.date}
+                </div>
                 <p className="text-slate-600 dark:text-gray-400">
-                  {item.subTitle}
+                  {role.subTitle}
                 </p>
-                {item.description ? (
+                {role.description ? (
                   <p className="text-slate-600 dark:text-gray-400 mt-2">
-                    {item.description}
+                    {role.description}
                   </p>
                 ) : null}
               </div>
             </div>
+            { index !== roles.length -1 ? (<hr/>) : null}
+          </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+};
+
+
+const Content: React.FC<ContentProps> = ({ title, institutions }) => {
+  return (
+    <section className="my-14 text-sm">
+      <h3 className="mb-6">{title}</h3>
+      <div className="flex flex-col gap-6">
+        {institutions.map((institution, index) => {
+          return (
+            <> <div className="flex ml-2">
+                <Image
+                  alt="Author"
+                  src={generalData.avatar}
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover"
+                />
+                <div className="flex flex-col">
+                  <h3 className="mt-3 font-semibold">{institution.name}</h3>
+                  <h4>{institution.tenure}</h4>
+                </div>
+              </div>
+              <div className="flex" key={index}>
+                <Roles {...institution} />
+              </div>
+            </>
           );
         })}
       </div>
@@ -48,6 +88,7 @@ export default function Home() {
             height={80}
             className="rounded-full object-cover"
           />
+          
           <div className="ml-4">
             <h1 className="mb-0.5 text-xl text-slate-900 dark:text-slate-100">
               {generalData.name}
