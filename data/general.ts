@@ -1,30 +1,15 @@
 export const generalData = {
-  name: "John Doe",
+  name: "Theo Archer",
   avatar: "https://github.com/ibelick.png",
-  jobTitle: "Senior Front-End Developer",
-  website: "https://www.julienthibeaut.xyz",
+  jobTitle: "Full-stack Developer",
+  website: "https://www.theoarcher.me",
   about:
-    "Hey there! I'm John, a senior front-end developer with 10 years of experience in web development.",
+    "Hey there! I'm Theo, a full-stack developer with significant experience working on enterprise software projects in eCommerce.",
   contacts: [
     {
       label: "Email",
-      value: "john.doe@gmail.com",
-      href: "mailto:john.doe@gmail.com",
-    },
-    {
-      label: "Twitter",
-      value: "ibelick",
-      href: "https://twitter.com/ibelick",
-    },
-    {
-      label: "Github",
-      value: "ibelick",
-      href: "https://github.com/ibelick",
-    },
-    {
-      label: "Read.CV",
-      value: "ibelick",
-      href: "https://read.cv/ibelick",
-    },
+      value: "theo@theoarcher.me",
+      href: "mailto:theo@theoarcher.me",
+    }
   ],
 };
