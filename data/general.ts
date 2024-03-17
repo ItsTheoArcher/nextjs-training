@@ -1,6 +1,6 @@
 export const generalData = {
   name: "Theo Archer",
-  avatar: "https://github.com/ibelick.png",
+  avatar: "/images/profile.jpg",
   jobTitle: "Full-stack Developer",
   website: "https://www.theoarcher.me",
   about:

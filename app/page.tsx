@@ -15,17 +15,15 @@ const Roles: React.FC<Institution> = ({ roles }) => {
           <li key={index}>
             { index !== 0 ? (<hr/>) : null}
             <div className="timeline-middle mx-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-              </svg>
+              <div className="w-5 h-5 bg-zinc-200 rounded-full"></div>
             </div>
             <div className="timeline-end">
               <div className="flex flex-col my-1">
                 <h4 className="font-semibold text-slate-600 dark:text-gray-400">{role.title}</h4>
-                <div className="text-xs text-slate-400 dark:text-slate-400">
+                <div className="text-xs text-slate-600 dark:text-slate-400">
                   {role.date}
                 </div>
-                <p className="text-slate-600 dark:text-gray-400">
+                <p className="text-xs text-slate-400 dark:text-gray-400">
                   {role.subTitle}
                 </p>
                 {role.description ? (
@@ -53,15 +51,17 @@ const Content: React.FC<ContentProps> = ({ title, institutions }) => {
         {institutions.map((institution, index) => {
           return (
             <> <div className="flex ml-2">
-                <Image
-                  alt="Author"
-                  src={generalData.avatar}
-                  width={40}
-                  height={40}
-                  className="rounded-full object-cover"
-                />
-                <div className="flex flex-col">
-                  <h3 className="mt-3 font-semibold">{institution.name}</h3>
+                <div className="flex items-center">
+                  <Image
+                    alt="Author"
+                    src={institution.image}
+                    width={40}
+                    height={40}
+                    className="rounded-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-col ml-2">
+                  <h3 className="font-semibold">{institution.name}</h3>
                   <h4>{institution.tenure}</h4>
                 </div>
               </div>

@@ -4,6 +4,7 @@ export const contentData = [
     institutions: [{ 
       name: 'The Warehouse Group',
       tenure: '4 yrs 11 mos',
+      image: '/images/twg.jpg',
       roles: [{
           title: "Chapter Member - Solution Engineering",
           subTitle: "Auckland, NZ",
@@ -26,6 +27,7 @@ export const contentData = [
       {
         name: 'SLI Systems',
         tenure: '3 yrs 7 mos',
+        image: '/images/sli.jpg',
         roles: [
           {
             title: "Implementation Manager",
@@ -48,6 +50,7 @@ export const contentData = [
     institutions: [{
       name: 'University of Canterbury',
       tenure: '3 yrs',
+      image: '/images/uc.svg',
       roles: [
         {
           title: "BSc Mathematics",
@@ -63,6 +66,7 @@ export const contentData = [
 export type Institution = {
   name: string,
   tenure: string,
+  image: string,
   roles: {
     title: string;
     subTitle: string;
