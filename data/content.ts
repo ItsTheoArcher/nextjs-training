@@ -54,8 +54,8 @@ export const contentData = [
       roles: [
         {
           title: "BSc Mathematics",
-          subTitle: "University of Canterbury",
-          date: "2010 - 2013",
+          subTitle: "Christchurch, NZ",
+          date: "Jan 2010 - Dec 2013",
           description: "Minor subjects: Computer Science, Economics",
         },
       ],

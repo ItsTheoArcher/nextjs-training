@@ -15,10 +15,10 @@ const Roles: React.FC<Institution> = ({ roles }) => {
           <li key={index}>
             { index !== 0 ? (<hr/>) : null}
             <div className="timeline-middle mx-4">
-              <div className="w-5 h-5 bg-zinc-200 rounded-full"></div>
+              <div className="w-3 h-3 bg-zinc-400 rounded-full"></div>
             </div>
             <div className="timeline-end">
-              <div className="flex flex-col my-1">
+              <div className="flex flex-col">
                 <h4 className="font-semibold text-slate-600 dark:text-gray-400">{role.title}</h4>
                 <div className="text-xs text-slate-600 dark:text-slate-400">
                   {role.date}
@@ -46,29 +46,28 @@ const Roles: React.FC<Institution> = ({ roles }) => {
 const Content: React.FC<ContentProps> = ({ title, institutions }) => {
   return (
     <section className="my-14 text-sm">
-      <h3 className="mb-6">{title}</h3>
-      <div className="flex flex-col gap-6">
+      <h2 className="text-lg mb-2">{title}</h2>
+      <div className="flex flex-col gap-6 divide-y-2">
         {institutions.map((institution, index) => {
           return (
-            <> <div className="flex ml-2">
+            <div className="flex flex-col" key={index}>
+              <div className="flex py-4">
                 <div className="flex items-center">
-                  <Image
-                    alt="Author"
-                    src={institution.image}
-                    width={40}
-                    height={40}
-                    className="rounded-full object-cover"
-                  />
+                    <Image
+                      alt="Author"
+                      src={institution.image}
+                      width={40}
+                      height={40}
+                      className="rounded-full object-cover"
+                    />
                 </div>
                 <div className="flex flex-col ml-2">
                   <h3 className="font-semibold">{institution.name}</h3>
                   <h4>{institution.tenure}</h4>
                 </div>
-              </div>
-              <div className="flex" key={index}>
-                <Roles {...institution} />
-              </div>
-            </>
+            </div>
+              <Roles {...institution} />
+          </div>
           );
         })}
       </div>
@@ -90,7 +89,7 @@ export default function Home() {
           />
           
           <div className="ml-4">
-            <h1 className="mb-0.5 text-xl text-slate-900 dark:text-slate-100">
+            <h1 className="mb-0.5 text-xl text-slate-900 dark:text-slate-100 font-semibold">
               {generalData.name}
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -113,7 +112,7 @@ export default function Home() {
           </div>
         </section>
         <section className="my-9 text-sm">
-          <h3 className="mb-1 text-slate-900 dark:text-slate-100">About</h3>
+          <h2 className="text-lg mb-1 text-slate-900 dark:text-slate-100">About</h2>
           <div className="text-slate-600 dark:text-slate-300">
             <p>{generalData.about}</p>
           </div>
@@ -122,7 +121,7 @@ export default function Home() {
           return <Content {...content} key={index} />;
         })}
         <section className="my-14 text-sm">
-          <h3 className="mb-6 text-slate-900">Contact</h3>
+          <h2 className="text-lg mb-2 text-slate-900">Contact</h2>
           <div className="flex flex-col gap-6">
             {generalData.contacts.map((contact, index) => {
               return (
