@@ -21,7 +21,7 @@ const Roles: React.FC<Institution> = ({ roles }) => {
               <div className="flex flex-col">
                 <h4 className="font-semibold text-slate-600 dark:text-gray-400">{role.title}</h4>
                 <div className="text-xs text-slate-600 dark:text-slate-400">
-                  {role.date}
+                  {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'present'}
                 </div>
                 <p className="text-xs text-slate-400 dark:text-gray-400">
                   {role.subTitle}
@@ -42,11 +42,25 @@ const Roles: React.FC<Institution> = ({ roles }) => {
   );
 };
 
+function getTenure(roles: Institution["roles"]){
+  let totalTenure = 0;
+  roles.forEach((role) => {
+    const endDateMs = role.endDate ? new Date(role.endDate).getTime() : Date.now();
+    const startDateMs = new Date(role.startDate).getTime()
+    totalTenure += ( endDateMs - startDateMs)
+  })
+
+  const totalTenureDays = totalTenure / (24 * 60 * 60 * 1000);
+  const totalTenureYears = Math.floor((totalTenureDays / 365));
+  const totalTenureMonths = Math.floor((totalTenureDays % 365) / 30.436875 );
+
+  return `${totalTenureYears > 0 ? totalTenureYears + ' years': ''} ${totalTenureMonths} months`
+}
 
 const Content: React.FC<ContentProps> = ({ title, institutions }) => {
   return (
     <section className="my-14 text-sm">
-      <h2 className="text-lg mb-2">{title}</h2>
+      <h2 className="text-lg mb-2 text-slate-900 dark:text-slate-100">{title}</h2>
       <div className="flex flex-col gap-6 divide-y-2">
         {institutions.map((institution, index) => {
           return (
@@ -63,7 +77,7 @@ const Content: React.FC<ContentProps> = ({ title, institutions }) => {
                 </div>
                 <div className="flex flex-col ml-2">
                   <h3 className="font-semibold">{institution.name}</h3>
-                  <h4>{institution.tenure}</h4>
+                  <h4>{getTenure(institution.roles)}</h4>
                 </div>
             </div>
               <Roles {...institution} />
@@ -121,7 +135,7 @@ export default function Home() {
           return <Content {...content} key={index} />;
         })}
         <section className="my-14 text-sm">
-          <h2 className="text-lg mb-2 text-slate-900">Contact</h2>
+          <h2 className="text-lg mb-2 text-slate-900 dark:text-slate-100">Contact</h2>
           <div className="flex flex-col gap-6">
             {generalData.contacts.map((contact, index) => {
               return (

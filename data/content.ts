@@ -3,42 +3,59 @@ export const contentData = [
     title: "Experience",
     institutions: [{ 
       name: 'The Warehouse Group',
-      tenure: '4 yrs 11 mos',
       image: '/images/twg.jpg',
       roles: [{
           title: "Chapter Member - Solution Engineering",
           subTitle: "Auckland, NZ",
-          date: "Dec 2021 - Present",
+          startDate: '2021-12-01',
+          endDate: null,
           description: "Design system, UI dev and web animations.",
+          skills: ['Salesforce Commerce Cloud', 'JavaScript', 'Agile Scrum', 'Rhino JS']
         },
         {
           title: "eCommerce Personalisation Manager",
           subTitle: "Auckland, NZ",
-          date: "Feb 2020 - Dec 2021",
+          startDate: '2020-02-01',
+          endDate: '2021-12-01',
           description: "Working for clients around the world.",
         },
         {
           title: "eCommerce Personalisation Support",
           subTitle: "Auckland, NZ",
-          date: "May 2019 - Feb 2020",
+          startDate: '2019-05-01',
+          endDate: '2020-02-01',
           description: "Working for clients around the world.",
         }
       ]},
       {
+        name: 'Career Break',
+        image: '/images/travel.svg',
+        roles: [
+          {
+            title: "Backpacking Europe & SEA",
+            subTitle: "",
+            startDate: '2018-06-01',
+            endDate: '2019-05-01',
+            description: "Working for clients around the world.",
+          }
+        ]
+      },
+      {
         name: 'SLI Systems',
-        tenure: '3 yrs 7 mos',
         image: '/images/sli.jpg',
         roles: [
           {
             title: "Implementation Manager",
             subTitle: "London, UK",
-            date: "Feb 2017 - Jun 2018",
+            startDate: '2017-02-01',
+            endDate: '2018-06-01',
             description: "Working for clients around the world.",
           },
           {
             title: "Software Engineer",
             subTitle: "Christchurch, NZ",
-            date: "Dec 2014 - Feb 2017",
+            startDate: '2014-12-01',
+            endDate: '2017-02-01',
             description: "Working for clients around the world.",
           }
         ]
@@ -55,7 +72,8 @@ export const contentData = [
         {
           title: "BSc Mathematics",
           subTitle: "Christchurch, NZ",
-          date: "Jan 2010 - Dec 2013",
+          startDate: '2010-01-01',
+          endDate: '2013-12-01',
           description: "Minor subjects: Computer Science, Economics",
         },
       ],
@@ -70,7 +88,8 @@ export type Institution = {
   roles: {
     title: string;
     subTitle: string;
-    date: string;
+    startDate: string;
+    endDate: string;
     description: string;
   }[];
 };
