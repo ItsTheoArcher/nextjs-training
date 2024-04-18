@@ -2,9 +2,19 @@ import Image from "next/image";
 import ThemeSwitch from "@/components/theme-switch";
 import { generalData } from "@/data/general";
 import { contentData } from "@/data/content";
-import type { Content, Institution } from "@/data/content";
+import type { Content, Institution, Role } from "@/data/content";
 
 type ContentProps = Content;
+
+const SkillList: React.FC<Role> = ({ skills }) => {
+  return  (
+      <div className="text-gray-500 dark:text-gray-400 mt-2">
+        {skills.map((skill, index) => {
+          return (<span className="font-semibold text-xs text-nowrap mr-1" key={index}>{skill}{ index !== skills.length -1 ? ',' : null}</span>)
+        })}
+      </div>
+  )
+}
 
 const Roles: React.FC<Institution> = ({ roles }) => {
   return (
@@ -18,10 +28,10 @@ const Roles: React.FC<Institution> = ({ roles }) => {
               <div className="w-3 h-3 bg-zinc-400 rounded-full"></div>
             </div>
             <div className="timeline-end">
-              <div className="flex flex-col">
+              <div className="flex flex-col mb-4">
                 <h4 className="font-semibold text-slate-600 dark:text-gray-400">{role.title}</h4>
                 <div className="text-xs text-slate-600 dark:text-slate-400">
-                  {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'present'}
+                  {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'Present'}
                 </div>
                 <p className="text-xs text-slate-400 dark:text-gray-400">
                   {role.subTitle}
@@ -30,6 +40,9 @@ const Roles: React.FC<Institution> = ({ roles }) => {
                   <p className="text-slate-600 dark:text-gray-400 mt-2">
                     {role.description}
                   </p>
+                ) : null}
+                {role.skills ? (
+                  <SkillList {...role} />
                 ) : null}
               </div>
             </div>
@@ -76,8 +89,8 @@ const Content: React.FC<ContentProps> = ({ title, institutions }) => {
                     />
                 </div>
                 <div className="flex flex-col ml-2">
-                  <h3 className="font-semibold">{institution.name}</h3>
-                  <h4>{getTenure(institution.roles)}</h4>
+                  <h3 className="font-semibold text-slate-900 dark:text-slate-300">{institution.name}</h3>
+                  <h4 className="text-slate-700 dark:text-slate-400">{getTenure(institution.roles)}</h4>
                 </div>
             </div>
               <Roles {...institution} />
@@ -170,9 +183,6 @@ export default function Home() {
             })}
           </div>
         </section>
-        <div className="px-6 absolute left-0 bottom-6">
-          <ThemeSwitch />
-        </div>
       </main>
     </>
   );

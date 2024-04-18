@@ -5,26 +5,28 @@ export const contentData = [
       name: 'The Warehouse Group',
       image: '/images/twg.jpg',
       roles: [{
-          title: "Chapter Member - Solution Engineering",
+          title: "Solution Engineering - Chapter Member",
           subTitle: "Auckland, NZ",
           startDate: '2021-12-01',
           endDate: null,
-          description: "Design system, UI dev and web animations.",
-          skills: ['Salesforce Commerce Cloud', 'JavaScript', 'Agile Scrum', 'Rhino JS']
+          description: "Develop and optimise the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming",
+          skills: ['Salesforce Commerce Cloud', 'JavaScript', 'node.js', 'Agile' ]
         },
         {
           title: "eCommerce Personalisation Manager",
           subTitle: "Auckland, NZ",
           startDate: '2020-02-01',
           endDate: '2021-12-01',
-          description: "Working for clients around the world.",
+          description: "Managing small team of marketing technology experts to develop and implement data-driven personalisation initiatives.",
+          skills: ["Stakeholder Management", "Dynamic Yield", "Salesforce Marketing Cloud"]
         },
         {
           title: "eCommerce Personalisation Support",
           subTitle: "Auckland, NZ",
           startDate: '2019-05-01',
           endDate: '2020-02-01',
-          description: "Working for clients around the world.",
+          description: "Working with a small team of marketing technology experts to develop and implement data-driven personalisation initiatives.",
+          skills: ["Dynamic Yield", "Google Tag Manager", "Salesforce Marketing Cloud"]
         }
       ]},
       {
@@ -36,7 +38,7 @@ export const contentData = [
             subTitle: "",
             startDate: '2018-06-01',
             endDate: '2019-05-01',
-            description: "Working for clients around the world.",
+            description: "Travelling solo around Europe and South East Asia",
           }
         ]
       },
@@ -49,14 +51,16 @@ export const contentData = [
             subTitle: "London, UK",
             startDate: '2017-02-01',
             endDate: '2018-06-01',
-            description: "Working for clients around the world.",
+            description: "Managing the implementation of SLI's suite of eCommerce centric SaaS products for clients including WHSmith, and Iceland Foods. Providing technical pre-sales support.",
+            skills: ["Sales Engineering", "Project Management", "Customer Success"]
           },
           {
             title: "Software Engineer",
-            subTitle: "Christchurch, NZ",
+            subTitle: "Christchurch, NZ / London, UK",
             startDate: '2014-12-01',
             endDate: '2017-02-01',
-            description: "Working for clients around the world.",
+            description: "Implementation of SLI's suite of eCommerce centric SaaS products including Learning Search, Product Recommendations, and Site Champion.",
+            skills: ["Web Development", "SaaS"]
           }
         ]
       }
@@ -85,14 +89,17 @@ export type Institution = {
   name: string,
   tenure: string,
   image: string,
-  roles: {
-    title: string;
-    subTitle: string;
-    startDate: string;
-    endDate: string;
-    description: string;
-  }[];
+  roles: Role[];
 };
+
+export type Role = {
+  title: string;
+  subTitle: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  skills: string[];
+}
 
 export type Content = {
   title: string;
