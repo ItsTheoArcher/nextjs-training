@@ -70,7 +70,6 @@ export const contentData = [
     title: "Education",
     institutions: [{
       name: 'University of Canterbury',
-      tenure: '3 yrs',
       image: '/images/uc.svg',
       roles: [
         {
@@ -87,7 +86,6 @@ export const contentData = [
 
 export type Institution = {
   name: string,
-  tenure: string,
   image: string,
   roles: Role[];
 };
@@ -96,9 +94,9 @@ export type Role = {
   title: string;
   subTitle: string;
   startDate: string;
-  endDate: string;
+  endDate: string | null;
   description: string;
-  skills: string[];
+  skills?: string[];
 }
 
 export type Content = {
