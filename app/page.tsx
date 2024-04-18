@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ThemeSwitch from "@/components/theme-switch";
 import { generalData } from "@/data/general";
 import { contentData } from "@/data/content";
 import type { Content, Institution, Role } from "@/data/content";

@@ -17,7 +17,7 @@ export const contentData = [
           subTitle: "Auckland, NZ",
           startDate: '2020-02-01',
           endDate: '2021-12-01',
-          description: "Managing small team of marketing technology experts to develop and implement data-driven personalisation initiatives.",
+          description: "Managing a small team of marketing technology experts to develop and implement data-driven personalisation initiatives.",
           skills: ["Stakeholder Management", "Dynamic Yield", "Salesforce Marketing Cloud"]
         },
         {
