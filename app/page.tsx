@@ -6,12 +6,12 @@ import type { Content, Institution, Role } from "@/data/content";
 type ContentProps = Content;
 
 const SkillList: React.FC<Role> = ({ skills }) => {
-  return  (
+  return  ( skills ?
       <div className="text-gray-500 dark:text-gray-400 mt-2">
         {skills.map((skill, index) => {
           return (<span className="font-semibold text-xs text-nowrap mr-1" key={index}>{skill}{ index !== skills.length -1 ? ',' : null}</span>)
         })}
-      </div>
+      </div> : null
   )
 }
 
