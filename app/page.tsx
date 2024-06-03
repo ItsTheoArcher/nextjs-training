@@ -18,14 +18,14 @@ export default function Home() {
           />
           
           <div className="ml-4">
-            <h1 className="mb-0.5 text-xl text-slate-900 dark:text-slate-100 font-semibold">
+            <h1 className="mb-0.5 text-xl text-slate-900 dark:text-slate-100 font-bold">
               {generalData.name}
             </h1>
-            <p className="text-slate-600 dark:text-slate-300 text-sm">
+            <p className="font-semibold text-slate-600 dark:text-slate-300 text-sm">
               {generalData.jobTitle}
             </p>
             {generalData.website ? (
-              <span className="text-sm text-slate-400 dark:text-slate-400">
+              <span className="text-sm text-slate-600 dark:text-slate-400">
                 <a
                   href={generalData.website}
                   target="_blank"
@@ -52,13 +52,13 @@ export default function Home() {
         {contentData.map((content, index) => {
           return <Content {...content} key={index} />;
         })}
-        <section className="my-14 text-sm">
+        <section className="my-9 text-sm">
           <h2 className="text-lg mb-2 text-slate-900 dark:text-slate-100">Contact</h2>
           <div className="flex flex-col gap-6">
             {generalData.contacts.map((contact, index) => {
               return (
                 <div className="flex" key={index}>
-                  <div className="mr-8 max-w-[100px] w-full text-slate-400 dark:text-slate-400">
+                  <div className="mr-8 max-w-[100px] w-full text-slate-600 dark:text-slate-400">
                     {contact.label}
                   </div>
                   <div className="flex flex-col flex-1 text-slate-900 dark:text-slate-100">
