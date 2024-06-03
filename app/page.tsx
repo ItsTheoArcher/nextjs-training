@@ -1,105 +1,8 @@
 import Image from "next/image";
+import Content from '@/components/content';
+
 import { generalData } from "@/data/general";
 import { contentData } from "@/data/content";
-import type { Content, Institution, Role } from "@/data/content";
-
-type ContentProps = Content;
-
-const SkillList: React.FC<Role> = ({ skills }) => {
-  return  ( skills ?
-      <div className="text-gray-500 dark:text-gray-400 mt-2">
-        {skills.map((skill, index) => {
-          return (<span className="font-semibold text-xs text-nowrap mr-1" key={index}>{skill}{ index !== skills.length -1 ? ',' : null}</span>)
-        })}
-      </div> : null
-  )
-}
-
-const Roles: React.FC<Institution> = ({ roles }) => {
-  return (
-    <section className="text-sm">
-      <ul className="timeline timeline-snap-icon timeline-vertical timeline-compact">
-        {roles.map((role, index) => {
-          return (
-          <li key={index}>
-            { index !== 0 ? (<hr/>) : null}
-            <div className="timeline-middle mx-4">
-              <div className="w-3 h-3 bg-zinc-400 rounded-full"></div>
-            </div>
-            <div className="timeline-end">
-              <div className="flex flex-col mb-4">
-                <h4 className="font-semibold text-slate-600 dark:text-gray-400">{role.title}</h4>
-                <div className="text-xs text-slate-600 dark:text-slate-400">
-                  {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'Present'}
-                </div>
-                <p className="text-xs text-slate-400 dark:text-gray-400">
-                  {role.subTitle}
-                </p>
-                {role.description ? (
-                  <p className="text-slate-600 dark:text-gray-400 mt-2">
-                    {role.description}
-                  </p>
-                ) : null}
-                {role.skills ? (
-                  <SkillList {...role} />
-                ) : null}
-              </div>
-            </div>
-            { index !== roles.length -1 ? (<hr/>) : null}
-          </li>
-          );
-        })}
-      </ul>
-    </section>
-  );
-};
-
-function getTenure(roles: Institution["roles"]){
-  let totalTenure = 0;
-  roles.forEach((role) => {
-    const endDateMs = role.endDate ? new Date(role.endDate).getTime() : Date.now();
-    const startDateMs = new Date(role.startDate).getTime()
-    totalTenure += ( endDateMs - startDateMs)
-  })
-
-  const totalTenureDays = totalTenure / (24 * 60 * 60 * 1000);
-  const totalTenureYears = Math.floor((totalTenureDays / 365));
-  const totalTenureMonths = Math.floor((totalTenureDays % 365) / 30.436875 );
-
-  return `${totalTenureYears > 0 ? totalTenureYears + ' years': ''} ${totalTenureMonths} months`
-}
-
-const Content: React.FC<ContentProps> = ({ title, institutions }) => {
-  return (
-    <section className="my-14 text-sm">
-      <h2 className="text-lg mb-2 text-slate-900 dark:text-slate-100">{title}</h2>
-      <div className="flex flex-col gap-6 divide-y-2">
-        {institutions.map((institution, index) => {
-          return (
-            <div className="flex flex-col" key={index}>
-              <div className="flex py-4">
-                <div className="flex items-center">
-                    <Image
-                      alt="Author"
-                      src={institution.image}
-                      width={40}
-                      height={40}
-                      className="rounded-full object-cover"
-                    />
-                </div>
-                <div className="flex flex-col ml-2">
-                  <h3 className="font-semibold text-slate-900 dark:text-slate-300">{institution.name}</h3>
-                  <h4 className="text-slate-700 dark:text-slate-400">{getTenure(institution.roles)}</h4>
-                </div>
-            </div>
-              <Roles {...institution} />
-          </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-};
 
 export default function Home() {
   return (
@@ -140,7 +43,10 @@ export default function Home() {
         <section className="my-9 text-sm">
           <h2 className="text-lg mb-1 text-slate-900 dark:text-slate-100">About</h2>
           <div className="text-slate-600 dark:text-slate-300">
-            <p>{generalData.about}</p>
+            {generalData.about.map((content, index) => {
+              return <p className={(index < generalData.about.length - 1 ? 'mb-5' : undefined)} key={index}>{content}</p>
+            })}
+            
           </div>
         </section>
         {contentData.map((content, index) => {
