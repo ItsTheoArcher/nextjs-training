@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
       <html lang="en">
-        <body className={`${inter.className} dark:bg-neutral-900`}>
+        <body className={`${inter.className}`}>
           {children}
           <Analytics/>
         </body>
