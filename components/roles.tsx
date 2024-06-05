@@ -8,13 +8,13 @@ const Roles: React.FC<Institution> = ({ roles }) => {
           {roles.map((role, index) => {
             return (
             <li key={index}>
-              { index !== 0 ? (<hr className="bg-zinc-200"/>) : null}
+              { index !== 0 ? (<hr className="bg-zinc-200 dark:bg-zinc-600"/>) : null}
               <div className="timeline-middle mx-4">
                 <div className="w-3 h-3 bg-zinc-400 rounded-full"></div>
               </div>
               <div className="timeline-end">
                 <div className="flex flex-col mb-4">
-                  <h4 className="font-semibold text-slate-600 dark:text-gray-400">{role.title}</h4>
+                  <h4 className="font-semibold text-slate-600 dark:text-slate-300">{role.title}</h4>
                   <div className="text-slate-600 dark:text-slate-400">
                     {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'Present'}
                   </div>
@@ -31,7 +31,7 @@ const Roles: React.FC<Institution> = ({ roles }) => {
                   ) : null}
                 </div>
               </div>
-              { index !== roles.length -1 ? (<hr className="bg-zinc-200"/>) : null}
+              { index !== roles.length -1 ? (<hr className="bg-zinc-200 dark:bg-zinc-600"/>) : null}
             </li>
             );
           })}

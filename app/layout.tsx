@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <ServerThemeProvider attribute="class">
       <html lang="en">
-        <body className={`${inter.className} dark:bg-neutral-600`}>
+        <body className={`${inter.className} dark:bg-neutral-800`}>
           <Providers>{children}</Providers>
           <Analytics />
         </body>

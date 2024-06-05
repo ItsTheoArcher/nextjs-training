@@ -22,7 +22,7 @@ function getTenure(roles: Institution["roles"]){
 const Content: React.FC<ContentProps> = ({ title, institutions }) => {
     return (
       <section className="my-9 text-sm">
-        <h2 className="text-lg mb-2 text-slate-900">{title}</h2>
+        <h2 className="text-lg mb-2 text-slate-900 dark:text-slate-200">{title}</h2>
         <div className="flex flex-col gap-6 divide-y-2">
           {institutions.map((institution, index) => {
             return (
@@ -38,8 +38,8 @@ const Content: React.FC<ContentProps> = ({ title, institutions }) => {
                       />
                   </div>
                   <div className="flex flex-col ml-2">
-                    <h3 className="font-semibold text-slate-900 ">{institution.name}</h3>
-                    <h4 className="text-slate-700">{getTenure(institution.roles)}</h4>
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-200">{institution.name}</h3>
+                    <h4 className="text-slate-700 dark:text-slate-300">{getTenure(institution.roles)}</h4>
                   </div>
               </div>
                 <Roles {...institution} />
