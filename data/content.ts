@@ -10,7 +10,7 @@ export const contentData = [
           startDate: '2021-12-01',
           endDate: null,
           description: "Develop and optimise the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming",
-          skills: ['Salesforce Commerce Cloud', 'JavaScript', 'node.js', 'Agile' ]
+          skills: [ 'JavaScript/TypeScript', 'Node.js', 'git', 'Agile Scrum', 'Salesforce Commerce Cloud' ]
         },
         {
           title: "eCommerce Personalisation Manager",

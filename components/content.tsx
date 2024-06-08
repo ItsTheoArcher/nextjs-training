@@ -28,16 +28,16 @@ const Content: React.FC<ContentProps> = ({ title, institutions }) => {
             return (
               <div className="flex flex-col" key={index}>
                 <div className="flex py-4">
-                  <div className="flex items-center">
+                  <div className="flex justify-center w-11">
                       <Image
                         alt="Author"
                         src={institution.image}
                         width={40}
                         height={40}
-                        className="rounded-full object-cover"
+                        className="rounded-full"
                       />
                   </div>
-                  <div className="flex flex-col ml-2">
+                  <div className="flex flex-col ml-1">
                     <h3 className="font-semibold text-slate-900 dark:text-slate-200">{institution.name}</h3>
                     <h4 className="text-slate-700 dark:text-slate-300">{getTenure(institution.roles)}</h4>
                   </div>
