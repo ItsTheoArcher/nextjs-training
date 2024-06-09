@@ -1,23 +1,10 @@
 import Image from "next/image";
 import Roles from "@/components/roles"
 
-import type { Content, Institution } from "@/data/content";
+import type { Content } from "@/data/content";
 
 type ContentProps = Content;
 
-function getTenure(roles: Institution["roles"]){
-    let totalTenure = 0;
-    roles.forEach((role) => {
-      const endDateMs = role.endDate ? new Date(role.endDate).getTime() : Date.now();
-      const startDateMs = new Date(role.startDate).getTime()
-      totalTenure += ( endDateMs - startDateMs)
-    })
-  
-    const totalTenureDays = totalTenure / (24 * 60 * 60 * 1000);
-    const totalTenureYears = Math.floor((totalTenureDays / 365));
-    const totalTenureMonths = Math.floor((totalTenureDays % 365) / 30.436875 );
-    return `${totalTenureYears > 0 ? totalTenureYears + ' years': ''} ${totalTenureMonths} months`
-  }
 
 const Content: React.FC<ContentProps> = ({ title, institutions }) => {
     return (
@@ -37,9 +24,8 @@ const Content: React.FC<ContentProps> = ({ title, institutions }) => {
                         className="rounded-full"
                       />
                   </div>
-                  <div className="flex flex-col ml-1">
+                  <div className="flex flex-col justify-center ml-1">
                     <h3 className="font-semibold text-slate-900 dark:text-slate-200">{institution.name}</h3>
-                    <h4 className="text-slate-700 dark:text-slate-300">{getTenure(institution.roles)}</h4>
                   </div>
               </div>
                 <Roles {...institution} />

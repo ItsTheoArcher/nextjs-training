@@ -1,4 +1,5 @@
 import SkillList from "./skill-list";
+import { getRoleTenure } from "@/app/lib/tenure";
 import type { Institution } from "@/data/content";
 
 const Roles: React.FC<Institution> = ({ roles }) => {
@@ -16,7 +17,7 @@ const Roles: React.FC<Institution> = ({ roles }) => {
                 <div className="flex flex-col mb-4">
                   <h4 className="font-semibold text-slate-600 dark:text-slate-300">{role.title}</h4>
                   <div className="text-slate-600 dark:text-slate-400">
-                    {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'Present'}
+                    {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'Present'} · {getRoleTenure(role.startDate, role.endDate)}
                   </div>
                   <p className="text-slate-600 dark:text-gray-400">
                     {role.subTitle}

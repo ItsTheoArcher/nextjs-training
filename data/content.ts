@@ -10,7 +10,7 @@ export const contentData = [
           startDate: '2021-12-01',
           endDate: null,
           description: "Develop and optimise the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming",
-          skills: [ 'JavaScript/TypeScript', 'Node.js', 'git', 'Agile Scrum', 'Salesforce Commerce Cloud' ]
+          skills: [ 'JavaScript/TypeScript', 'Node.js', 'Jest', 'Git', 'Agile Scrum', 'Salesforce Commerce Cloud' ]
         },
         {
           title: "eCommerce Personalisation Manager",
@@ -21,12 +21,12 @@ export const contentData = [
           skills: ["Stakeholder Management", "Dynamic Yield", "Salesforce Marketing Cloud"]
         },
         {
-          title: "eCommerce Personalisation Support",
+          title: "eCommerce Personalisation Developer",
           subTitle: "Auckland, NZ",
           startDate: '2019-05-01',
           endDate: '2020-02-01',
           description: "Working with a small team of marketing technology experts to develop and implement data-driven personalisation initiatives.",
-          skills: ["Dynamic Yield", "Google Tag Manager", "Salesforce Marketing Cloud"]
+          skills: ["JavaScript", "Dynamic Yield", "Google Tag Manager", "Salesforce Marketing Cloud"]
         }
       ]},
       {
@@ -60,7 +60,7 @@ export const contentData = [
             startDate: '2014-12-01',
             endDate: '2017-02-01',
             description: "Implementation of SLI's suite of eCommerce centric SaaS products including Learning Search, Product Recommendations, and Site Champion.",
-            skills: ["Web Development", "SaaS"]
+            skills: ["JavaScript", "HTML", "CSS", "Java", "SaaS"]
           }
         ]
       }
@@ -77,7 +77,7 @@ export const contentData = [
           subTitle: "Christchurch, NZ",
           startDate: '2010-01-01',
           endDate: '2013-12-01',
-          description: "Minor subjects: Computer Science, Economics",
+          description: "Other subjects: Computer Science, Economics",
         },
       ],
     }]

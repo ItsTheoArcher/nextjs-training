@@ -1,7 +1,7 @@
 export const generalData = {
   name: "Theo Archer",
   avatar: "/images/profile.jpg",
-  jobTitle: "Full-stack Developer",
+  jobTitle: "Full-stack Developer & Tinker",
   website: "https://www.linkedin.com/in/theoarcher/",
   about:[ "Hey! I'm Theo, a full-stack developer with 8 years experience working on enterprise software projects in eCommerce.",
   "I have excellent people skills and a solid background in software development, with experience as a Developer and Project Manager.",
