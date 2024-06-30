@@ -41,8 +41,8 @@ export default function Home() {
           </div>
         </section>
         <section className="my-9 text-sm">
-          <h2 className="text-lg mb-1 text-slate-900 dark:text-slate-200">About</h2>
-          <div className="text-slate-600 dark:text-gray-400">
+          <h2 className="text-lg mb-1 text-slate-800 dark:text-slate-300">About</h2>
+          <div className="text-slate-600 dark:text-gray-200">
             {generalData.about.map((content, index) => {
               return <p className={(index < generalData.about.length - 1 ? 'mb-5' : undefined)} key={index}>{content}</p>
             })}

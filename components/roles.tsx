@@ -16,14 +16,14 @@ const Roles: React.FC<Institution> = ({ roles }) => {
               <div className="timeline-end">
                 <div className="flex flex-col mb-4">
                   <h4 className="font-semibold text-slate-600 dark:text-slate-300">{role.title}</h4>
-                  <div className="text-slate-600 dark:text-slate-400">
+                  <div className="text-slate-600 dark:text-slate-300">
                     {new Date(role.startDate).toLocaleString('en-nz',{month:'short', year:'numeric'})} - { role.endDate ? new Date(role.endDate).toLocaleString('en-nz',{month:'short', year:'numeric'}) : 'Present'} · {getRoleTenure(role.startDate, role.endDate)}
                   </div>
                   <p className="text-slate-600 dark:text-gray-400">
                     {role.subTitle}
                   </p>
                   {role.description ? (
-                    <p className="text-slate-800 dark:text-gray-400 mt-2">
+                    <p className="text-slate-800 dark:text-gray-200 mt-2">
                       {role.description}
                     </p>
                   ) : null}

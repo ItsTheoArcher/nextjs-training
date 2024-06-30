@@ -5,12 +5,12 @@ export const contentData = [
       name: 'The Warehouse Group',
       image: '/images/twg.jpg',
       roles: [{
-          title: "Solution Engineering - Chapter Member",
+          title: "Full Stack Developer",
           subTitle: "Auckland, NZ",
           startDate: '2021-12-01',
           endDate: null,
           description: "Develop and optimise the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming",
-          skills: [ 'JavaScript/TypeScript', 'Node.js', 'Jest', 'Git', 'Agile Scrum', 'Salesforce Commerce Cloud' ]
+          skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Git', 'Agile Scrum', 'Salesforce Commerce Cloud', 'Express']
         },
         {
           title: "eCommerce Personalisation Manager",
