@@ -9,7 +9,7 @@ export const contentData = [
           subTitle: "Auckland, NZ",
           startDate: '2021-12-01',
           endDate: null,
-          description: "Develop and optimise the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming",
+          description: "Developing and optimising the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming.",
           skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Git', 'Agile Scrum', 'Salesforce Commerce Cloud', 'Express']
         },
         {
