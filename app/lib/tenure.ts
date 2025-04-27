@@ -8,13 +8,11 @@ function formatTenure(years: number, months: number): string {
   }
   
 export function getRoleTenure(startDate: string, endDate: string|null): string {
-    const endDateMs = endDate ? new Date(endDate).getTime() : Date.now();
-    const startDateMs = new Date(startDate).getTime()
-    const tenure = endDateMs - startDateMs
+    const endDateMs = endDate ? new Date(endDate) : new Date();
+    const startDateMs = new Date(startDate);
+    const months = (endDateMs.getFullYear() - startDateMs.getFullYear()) * 12 + (endDateMs.getMonth() - startDateMs.getMonth());
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
 
-    const totalTenureDays = tenure / (24 * 60 * 60 * 1000);
-    const totalTenureMonths = Math.floor((totalTenureDays % 365) / 30.436875 );
-    const totalTenureYears = Math.floor((totalTenureDays / 365));
-
-    return formatTenure(totalTenureYears, totalTenureMonths);
+    return formatTenure(years, remainingMonths);
 }
