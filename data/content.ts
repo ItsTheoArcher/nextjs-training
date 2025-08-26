@@ -4,11 +4,20 @@ export const contentData = [
     institutions: [{ 
       name: 'The Warehouse Group',
       image: '/images/twg.jpg',
-      roles: [{
+      roles: [
+        {
+          title: "Integration Engineer",
+          subTitle: "Auckland, NZ",
+          startDate: '2024-10-01',
+          endDate: null,
+          description: "Responsible for building and maintaining scalable event-driven microservices, deploying them via Docker and Azure Kubernetes Service. Simplify system integrations, improve service observability, develop internal tools to streamline workflows, and secure APIs using OAuth 2.0.",
+          skills: ['Java', 'Spring Boot', 'Kafka', 'Docker', 'Kubernetes']
+        },
+        {
           title: "Full Stack Developer",
           subTitle: "Auckland, NZ",
           startDate: '2021-12-01',
-          endDate: null,
+          endDate: '2024-10-01',
           description: "Developing and optimising the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming.",
           skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Git', 'Agile Scrum', 'Salesforce Commerce Cloud', 'Express']
         },
