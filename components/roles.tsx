@@ -8,7 +8,7 @@ const Roles: React.FC<Institution> = ({ roles }) => {
       <ul className="timeline timeline-snap-icon timeline-vertical timeline-compact">
         {roles.map((role, index) => {
           return (
-            <li key={index}>
+            <li key={role.id}>
               {index !== 0 ? (<hr className="bg-zinc-200 dark:bg-zinc-600 rounded-none" />) : null}
               <div className="timeline-middle mx-4">
                 <div className="w-3 h-3 bg-zinc-400 rounded-full"></div>

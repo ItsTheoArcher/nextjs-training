@@ -6,6 +6,7 @@ export const contentData = [
       image: '/images/twg.jpg',
       roles: [
         {
+          id: "twg-integration-engineer-2024",
           title: "Integration Engineer",
           subTitle: "Auckland, NZ",
           startDate: '2024-10-01',
@@ -14,6 +15,7 @@ export const contentData = [
           skills: ['Java', 'Spring Boot', 'Kafka', 'Docker', 'Kubernetes']
         },
         {
+          id: "twg-full-stack-developer-2021",
           title: "Full Stack Developer",
           subTitle: "Auckland, NZ",
           startDate: '2021-12-01',
@@ -22,6 +24,7 @@ export const contentData = [
           skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Git', 'Agile Scrum', 'Salesforce Commerce Cloud', 'Express']
         },
         {
+          id: "twg-personalisation-manager-2020",
           title: "eCommerce Personalisation Manager",
           subTitle: "Auckland, NZ",
           startDate: '2020-02-01',
@@ -30,6 +33,7 @@ export const contentData = [
           skills: ["Stakeholder Management", "Dynamic Yield", "Salesforce Marketing Cloud"]
         },
         {
+          id: "twg-personalisation-developer-2019",
           title: "eCommerce Personalisation Developer",
           subTitle: "Auckland, NZ",
           startDate: '2019-05-01',
@@ -43,6 +47,7 @@ export const contentData = [
         image: '/images/travel.svg',
         roles: [
           {
+            id: "career-break-backpacking-2018",
             title: "Backpacking Europe & SEA",
             subTitle: "",
             startDate: '2018-06-01',
@@ -56,6 +61,7 @@ export const contentData = [
         image: '/images/sli.jpg',
         roles: [
           {
+            id: "sli-implementation-manager-2017",
             title: "Implementation Manager",
             subTitle: "London, UK",
             startDate: '2017-02-01',
@@ -64,6 +70,7 @@ export const contentData = [
             skills: ["Sales Engineering", "Project Management", "Customer Success"]
           },
           {
+            id: "sli-software-engineer-2014",
             title: "Software Engineer",
             subTitle: "Christchurch, NZ / London, UK",
             startDate: '2014-12-01',
@@ -82,6 +89,7 @@ export const contentData = [
       image: '/images/uc.svg',
       roles: [
         {
+          id: "uc-bsc-mathematics-2010",
           title: "BSc Mathematics",
           subTitle: "Christchurch, NZ",
           startDate: '2010-01-01',
@@ -100,6 +108,7 @@ export type Institution = {
 };
 
 export type Role = {
+  id: string;
   title: string;
   subTitle: string;
   startDate: string;
@@ -112,7 +121,5 @@ export type Content = {
   title: string;
   institutions: Institution[];
 };
-
-
 
 export type ContentData = Content[];
