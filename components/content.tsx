@@ -16,16 +16,18 @@ const Content: React.FC<ContentProps> = ({ title, institutions }) => {
               <div className="flex flex-col" key={index}>
                 <div className="flex py-4">
                   <div className="flex justify-center w-11">
+                    <div className="bg-white rounded-full flex items-center justify-center w-8 h-8 overflow-hidden">
                       <Image
-                        alt="Author"
+                        alt={`${institution.name} logo`}
                         src={institution.image}
                         width={40}
                         height={40}
-                        className="rounded-full"
+                        className="object-contain w-8 h-8"
                       />
+                    </div>
                   </div>
                   <div className="flex flex-col justify-center ml-1">
-                    <h3 className="font-semibold text-slate-900 dark:text-slate-200">{institution.name}</h3>
+                    <h2 className="font-semibold text-slate-900 dark:text-slate-200">{institution.name}</h2>
                   </div>
               </div>
                 <Roles {...institution} />

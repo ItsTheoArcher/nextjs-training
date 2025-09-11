@@ -7,7 +7,7 @@ import { contentData } from "@/data/content";
 export default function Home() {
   return (
     <>
-      <main className="max-w-screen-md mx-auto px-6 py-20 relative min-h-screen font-light">
+      <main className="max-w-screen-md mx-auto px-6 py-6 relative min-h-screen font-light">
         <section className="flex items-center">
           <Image
             alt="Author"
@@ -21,7 +21,7 @@ export default function Home() {
             <h1 className="mb-0.5 text-xl text-slate-800 dark:text-gray-200 font-bold">
               {generalData.name}
             </h1>
-            <p className="font-semibold text-slate-600 dark:text-gray-300 text-sm">
+            <p className="font-semibold text-slate-800 dark:text-gray-300 text-sm">
               {generalData.jobTitle}
             </p>
             {generalData.website ? (
@@ -42,7 +42,7 @@ export default function Home() {
         </section>
         <section className="my-9 text-sm">
           <h2 className="text-lg mb-1 text-slate-800 dark:text-slate-300">About</h2>
-          <div className="text-slate-600 dark:text-gray-300">
+          <div className="text-slate-800 dark:text-gray-300">
             {generalData.about.map((content, index) => {
               return <p className={(index < generalData.about.length - 1 ? 'mb-5' : undefined)} key={index}>{content}</p>
             })}
