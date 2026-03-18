@@ -11,8 +11,8 @@ export const contentData: ContentData = [
           subTitle: "Auckland, NZ",
           startDate: '2024-10-01',
           endDate: null,
-          description: "Designed and delivered event-driven microservices processing 320k product inventory records/hour using Kafka and Spring Boot. Led migration of legacy WSO2 services to modern Spring Boot microservices, and consolidated six tightly coupled services into one. Standardised observability across order management using Kibana and New Relic. Presented quarterly technical outcomes to 100+ stakeholders.",
-          skills: ['Java', 'Spring Boot', 'Kafka', 'Azure', 'Docker', 'Kubernetes']
+          description: "Built a Kafka/Spring Boot microservice processing 320k inventory records per hour. Leading the migration of legacy WSO2 integrations to Spring Boot, and consolidated six services into one along the way. Improved observability across order management with Kibana and New Relic. Also present quarterly tech reviews to 100+ stakeholders, stepping in for the team manager.",
+          skills: ['Java', 'Spring Boot', 'Kafka', 'Azure API Manager', 'Docker', 'Kubernetes', 'CI/CD']
         },
         {
           id: "twg-full-stack-developer-2021",
@@ -20,7 +20,7 @@ export const contentData: ContentData = [
           subTitle: "Auckland, NZ",
           startDate: '2021-12-01',
           endDate: '2024-10-01',
-          description: "Reduced cart and checkout page response times by over 50% on thewarehouse.co.nz and noelleeming.co.nz by rewriting Salesforce Commerce Cloud implementations. Implemented a loyalty program integrating external REST APIs, supporting 1 million users. Developed ship-to-store delivery methods to reduce freight costs by encouraging purchases from local stores.",
+          description: "Cut cart and checkout response times by over 50% on thewarehouse.co.nz and noelleeming.co.nz. Built the Salesforce Commerce Cloud integration for a loyalty program that now serves a million users. Introduced ship-to-store as a delivery option to shift purchases toward local stores.",
           skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Salesforce Commerce Cloud']
         },
         {
@@ -29,7 +29,7 @@ export const contentData: ContentData = [
           subTitle: "Auckland, NZ",
           startDate: '2020-02-01',
           endDate: '2021-12-01',
-          description: "Led onboarding for an internal personalisation platform, enabling 20 merchandisers to self-serve content personalisation. Built personalised category suggestions and product recommendations, contributing to an award-winning customer experience.",
+          description: "Ran the rollout of an internal personalisation platform, letting 20 merchandisers manage their own content. Helped build the product recommendation features that won a customer experience award.",
           skills: ["Dynamic Yield", "Salesforce Marketing Cloud"]
         },
         {
@@ -66,7 +66,7 @@ export const contentData: ContentData = [
             subTitle: "London, UK",
             startDate: '2017-02-01',
             endDate: '2018-06-01',
-            description: "Managed onboarding and implementation of site search SaaS for 20+ clients, including WHSmith and Iceland Foods. Provided pre-sales engineering support to help secure large contracts.",
+            description: "Managed implementations for 20+ clients including WHSmith and Iceland Foods. Spent a lot of time in pre-sales too, helping the commercial team win contracts by bridging the technical and business sides.",
             skills: ["Sales Engineering", "SaaS Implementation", "Pre-Sales"]
           },
           {

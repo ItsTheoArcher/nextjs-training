@@ -29,8 +29,8 @@ export default function Home() {
               {generalData.jobTitle}
             </h2>
             <p className="mt-4 max-w-xs leading-normal">
-              Building high-throughput integrations and making complex systems
-              accessible to the people who depend on them.
+              I connect systems that weren't designed to talk to each
+              other.
             </p>
 
             <Nav />
@@ -153,29 +153,6 @@ export default function Home() {
                 )}
               </ol>
 
-              <div className="mt-4">
-                <a
-                  href="/cv.pdf"
-                  download
-                  className="group inline-flex items-center gap-1 text-sm font-medium leading-tight text-neutral-100 hover:text-emerald-400 transition-colors"
-                >
-                  View Full CV
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="ml-1 transition-transform group-hover:translate-x-1"
-                  >
-                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
             </div>
           </section>
 
