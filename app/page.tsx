@@ -29,7 +29,7 @@ export default function Home() {
               {generalData.jobTitle}
             </h2>
             <p className="mt-4 max-w-xs leading-normal">
-              I connect systems that weren't designed to talk to each
+              I connect systems that weren&apos;t designed to talk to each
               other.
             </p>
 
