@@ -2,8 +2,6 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { generalData } from "@/data/general";
 import { Analytics } from "@vercel/analytics/react"
-import { ServerThemeProvider } from "next-themes";
-import Providers from "./providers";
 import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -35,13 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ServerThemeProvider attribute="class">
-      <html lang="en">
-        <body className={`${inter.className} dark:bg-neutral-800`}>
-          <Providers>{children}</Providers>
-          <Analytics />
-        </body>
-      </html>
-    </ServerThemeProvider>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} bg-neutral-900 leading-relaxed text-neutral-400 antialiased selection:bg-emerald-300 selection:text-emerald-900`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
   );
 }

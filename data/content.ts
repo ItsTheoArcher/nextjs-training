@@ -11,8 +11,8 @@ export const contentData = [
           subTitle: "Auckland, NZ",
           startDate: '2024-10-01',
           endDate: null,
-          description: "Responsible for building and maintaining scalable event-driven microservices, deploying them via Docker and Azure Kubernetes Service. Simplify system integrations, improve service observability, develop internal tools to streamline workflows, and secure APIs using OAuth 2.0.",
-          skills: ['Java', 'Spring Boot', 'Kafka', 'Docker', 'Kubernetes']
+          description: "Designed and delivered event-driven microservices processing 320k product inventory records/hour using Kafka and Spring Boot. Led migration of legacy WSO2 services to modern Spring Boot microservices, and consolidated six tightly coupled services into one. Standardised observability across order management using Kibana and New Relic. Presented quarterly technical outcomes to 100+ stakeholders.",
+          skills: ['Java', 'Spring Boot', 'Kafka', 'Azure', 'Docker', 'Kubernetes']
         },
         {
           id: "twg-full-stack-developer-2021",
@@ -20,8 +20,8 @@ export const contentData = [
           subTitle: "Auckland, NZ",
           startDate: '2021-12-01',
           endDate: '2024-10-01',
-          description: "Developing and optimising the eCommerce platform for iconic NZ retailers The Warehouse and Noel Leeming.",
-          skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Git', 'Agile Scrum', 'Salesforce Commerce Cloud', 'Express']
+          description: "Reduced cart and checkout page response times by over 50% on thewarehouse.co.nz and noelleeming.co.nz by rewriting Salesforce Commerce Cloud implementations. Implemented a loyalty program integrating external REST APIs, supporting 1 million users. Developed ship-to-store delivery methods to reduce freight costs by encouraging purchases from local stores.",
+          skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Salesforce Commerce Cloud']
         },
         {
           id: "twg-personalisation-manager-2020",
@@ -29,8 +29,8 @@ export const contentData = [
           subTitle: "Auckland, NZ",
           startDate: '2020-02-01',
           endDate: '2021-12-01',
-          description: "Managing a small team of marketing technology experts to develop and implement data-driven personalisation initiatives.",
-          skills: ["Stakeholder Management", "Dynamic Yield", "Salesforce Marketing Cloud"]
+          description: "Led onboarding for an internal personalisation platform, enabling 20 merchandisers to self-serve content personalisation. Built personalised category suggestions and product recommendations, contributing to an award-winning customer experience.",
+          skills: ["Dynamic Yield", "Salesforce Marketing Cloud"]
         },
         {
           id: "twg-personalisation-developer-2019",
@@ -38,8 +38,8 @@ export const contentData = [
           subTitle: "Auckland, NZ",
           startDate: '2019-05-01',
           endDate: '2020-02-01',
-          description: "Working with a small team of marketing technology experts to develop and implement data-driven personalisation initiatives.",
-          skills: ["JavaScript", "Dynamic Yield", "Google Tag Manager", "Salesforce Marketing Cloud"]
+          description: "Implemented tracking and analytics across web and email channels, improving targeted advertising ROI. Built personalised web experiences using Dynamic Yield and Salesforce Marketing Cloud.",
+          skills: ["JavaScript", "Dynamic Yield", "Salesforce Marketing Cloud"]
         }
       ]},
       {
@@ -66,17 +66,17 @@ export const contentData = [
             subTitle: "London, UK",
             startDate: '2017-02-01',
             endDate: '2018-06-01',
-            description: "Managing the implementation of SLI's suite of eCommerce centric SaaS products for clients including WHSmith, and Iceland Foods. Providing technical pre-sales support.",
-            skills: ["Sales Engineering", "Project Management", "Customer Success"]
+            description: "Managed onboarding and implementation of site search SaaS for 20+ clients, including WHSmith and Iceland Foods. Provided pre-sales engineering support to help secure large contracts.",
+            skills: ["Sales Engineering", "SaaS Implementation", "Pre-Sales"]
           },
           {
             id: "sli-software-engineer-2014",
-            title: "Software Engineer",
+            title: "Client-Facing Engineer",
             subTitle: "Christchurch, NZ / London, UK",
             startDate: '2014-12-01',
             endDate: '2017-02-01',
-            description: "Implementation of SLI's suite of eCommerce centric SaaS products including Learning Search, Product Recommendations, and Site Champion.",
-            skills: ["JavaScript", "HTML", "CSS", "Java", "SaaS"]
+            description: "Implemented SaaS search integrations for 50+ clients, building data pipelines and web components across eCommerce platforms.",
+            skills: ["JavaScript", "Java", "Data Pipelines", "eCommerce"]
           }
         ]
       }
