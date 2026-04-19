@@ -43,20 +43,6 @@ export const contentData: ContentData = [
         }
       ]},
       {
-        name: 'Career Break',
-        image: '/images/travel.svg',
-        roles: [
-          {
-            id: "career-break-backpacking-2018",
-            title: "Backpacking Europe & SEA",
-            subTitle: "",
-            startDate: '2018-06-01',
-            endDate: '2019-05-01',
-            description: "Travelling solo around Europe and South East Asia",
-          }
-        ]
-      },
-      {
         name: 'SLI Systems',
         image: '/images/sli.jpg',
         roles: [
