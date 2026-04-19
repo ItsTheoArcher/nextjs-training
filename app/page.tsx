@@ -29,8 +29,7 @@ export default function Home() {
               {generalData.jobTitle}
             </h2>
             <p className="mt-4 max-w-xs leading-normal">
-              I connect systems that weren&apos;t designed to talk to each
-              other.
+              I ship integrations that keep commerce moving.
             </p>
 
             <Nav />
@@ -54,7 +53,7 @@ export default function Home() {
             )}
             <li>
               <a
-                href="https://github.com/theoarcher"
+                href="https://github.com/ItsTheoArcher"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-neutral-500 hover:text-neutral-100 transition-colors"

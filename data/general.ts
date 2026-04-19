@@ -3,7 +3,7 @@ export const generalData = {
   avatar: "/images/profile.jpg",
   jobTitle: "Integration Engineer",
   website: "https://www.linkedin.com/in/theoarcher/",
-  about:[ "I'm an integration engineer at The Warehouse Group, working on Kafka-based microservices on Kubernetes. Before this I spent years in client-facing roles, onboarding enterprise clients, supporting pre-sales, and managing small teams. I still present quarterly to 100+ stakeholders and build internal tools for non-technical teams. I like problems that need both technical depth and clear communication."],
+  about:[ "I'm an integration engineer at The Warehouse Group, building Kafka-based microservices on Kubernetes that move inventory, orders, and loyalty data at scale. Before going deep on engineering I spent years in client-facing roles — onboarding enterprise clients, supporting pre-sales, and leading small teams. I still present quarterly tech reviews to 100+ stakeholders. I do my best work on problems that need both technical rigour and clear communication."],
   contacts: [
     {
       label: "Email",

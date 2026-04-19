@@ -11,7 +11,7 @@ export const contentData: ContentData = [
           subTitle: "Auckland, NZ",
           startDate: '2024-10-01',
           endDate: null,
-          description: "Built a Kafka/Spring Boot microservice processing 320k inventory records per hour. Leading the migration of legacy WSO2 integrations to Spring Boot, and consolidated six services into one along the way. Improved observability across order management with Kibana and New Relic. Also present quarterly tech reviews to 100+ stakeholders, stepping in for the team manager.",
+          description: "Built a Kafka/Spring Boot microservice processing 320k inventory records per hour. Played a senior role in migrating legacy WSO2 integrations to Spring Boot — acting as deputy to the tech lead, contributing to architecture decisions, reviewing pull requests for contractors and internal team members, and delivering $100k NZD in annual licensing savings. Also consolidated six services into one, simplifying maintenance and clearing out a long tail of bugs. Built an automated test suite to replace manual QA processes. Improved observability across order management with Kibana and New Relic. Present quarterly tech reviews to 100+ stakeholders.",
           skills: ['Java', 'Spring Boot', 'Kafka', 'Azure API Manager', 'Docker', 'Kubernetes', 'CI/CD']
         },
         {
@@ -29,7 +29,7 @@ export const contentData: ContentData = [
           subTitle: "Auckland, NZ",
           startDate: '2020-02-01',
           endDate: '2021-12-01',
-          description: "Ran the rollout of an internal personalisation platform, letting 20 merchandisers manage their own content. Helped build the product recommendation features that won a customer experience award.",
+          description: "Created documentation and ran training to scale Dynamic Yield adoption across the business, enabling 20 merchandisers to manage their own personalisation content. Helped build the product recommendation features that won a customer experience award.",
           skills: ["Dynamic Yield", "Salesforce Marketing Cloud"]
         },
         {
