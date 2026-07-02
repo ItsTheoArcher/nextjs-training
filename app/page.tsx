@@ -8,7 +8,7 @@ function formatDateRange(startDate: string, endDate: string | null): string {
   const end = endDate ? new Date(endDate) : null;
   const fmt = (d: Date) =>
     d.toLocaleString("en", { month: "short", year: "numeric" }).toUpperCase();
-  return `${fmt(start)} — ${end ? fmt(end) : "PRESENT"}`;
+  return `${fmt(start)} – ${end ? fmt(end) : "PRESENT"}`;
 }
 
 export default function Home() {
