@@ -10,7 +10,7 @@ export const contentData: ContentData = [
           startDate: '2024-10-01',
           endDate: null,
           description: "Designed and built five Spring Boot microservices to replace legacy WSO2 order integrations, saving around $100k NZD a year in licensing and standing in for the tech lead on the migration. As sole developer, stabilised the Fulfilment team's Manhattan Active Omni integration, an estate of 30+ microservices and 30 Kafka Connect connectors, adding the logging, alerting and monitoring it had been missing. Also wrote a Claude Agent SDK skill that generates integration tests for Spring Boot services, cutting setup from days to minutes.",
-          skills: ['Java', 'Spring Boot', 'Kafka', 'Kafka Connect', 'Kubernetes', 'Docker', 'PostgreSQL', 'Claude Agent SDK']
+          skills: ['Java', 'Spring Boot', 'Kafka', 'Kubernetes', 'Docker', 'PostgreSQL', 'Claude Agent SDK']
         },
         {
           id: "twg-full-stack-developer-2021",
