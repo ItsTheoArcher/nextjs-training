@@ -2,19 +2,10 @@ import { generalData } from "@/data/general";
 import { contentData } from "@/data/content";
 import Nav from "@/components/nav";
 import CursorGradient from "@/components/cursor-gradient";
-
-function formatDateRange(startDate: string, endDate: string | null): string {
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : null;
-  const fmt = (d: Date) =>
-    d.toLocaleString("en", { month: "short", year: "numeric" }).toUpperCase();
-  return `${fmt(start)} – ${end ? fmt(end) : "PRESENT"}`;
-}
+import Section from "@/components/section";
+import RoleList from "@/components/role-list";
 
 export default function Home() {
-  const experienceData = contentData.find((c) => c.title === "Experience");
-  const educationData = contentData.find((c) => c.title === "Education");
-
   return (
     <div className="relative mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0">
       <CursorGradient />
@@ -28,9 +19,7 @@ export default function Home() {
             <h2 className="mt-3 text-lg font-medium tracking-tight text-neutral-100">
               {generalData.jobTitle}
             </h2>
-            <p className="mt-4 max-w-xs leading-normal">
-              I ship integrations that keep commerce moving.
-            </p>
+            <p className="mt-4 max-w-xs leading-normal">{generalData.tagline}</p>
 
             <Nav />
           </div>
@@ -51,25 +40,25 @@ export default function Home() {
                 </a>
               </li>
             )}
-            <li>
-              <a
-                href="https://github.com/ItsTheoArcher"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-neutral-500 hover:text-neutral-100 transition-colors"
-                aria-label="GitHub"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                </svg>
-              </a>
-            </li>
-            {generalData.contacts.map((contact, index) => (
-              <li key={index}>
+            {generalData.github && (
+              <li>
                 <a
-                  href={contact.href}
+                  href={generalData.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="block text-neutral-500 hover:text-neutral-100 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </a>
+              </li>
+            )}
+            {generalData.contacts.map((contact) => (
+              <li key={contact.label}>
+                <a
+                  href={contact.href}
                   className="block text-neutral-500 hover:text-neutral-100 transition-colors"
                   aria-label={contact.label}
                 >
@@ -84,114 +73,24 @@ export default function Home() {
 
         {/* ── Right scrolling content ── */}
         <main id="content" className="pt-24 lg:w-[52%] lg:py-24">
-          {/* About */}
-          <section
-            id="about"
-            className="mb-16 scroll-mt-16 lg:mb-24 lg:scroll-mt-24"
-            aria-label="About me"
-          >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-neutral-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-0 lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-100">
-                About
-              </h2>
-            </div>
+          <Section id="about" title="About" ariaLabel="About me">
             <div className="space-y-4">
               {generalData.about.map((content, index) => (
                 <p key={index}>{content}</p>
               ))}
             </div>
-          </section>
+          </Section>
 
-          {/* Experience */}
-          <section
-            id="experience"
-            className="mb-16 scroll-mt-16 lg:mb-24 lg:scroll-mt-24"
-            aria-label="Work experience"
-          >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-neutral-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-0 lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-100">
-                Experience
-              </h2>
-            </div>
-            <div>
-              <ol className="group/list">
-                {experienceData?.institutions.map((inst) =>
-                  inst.roles.map((role) => (
-                    <li key={role.id} className="mb-12">
-                      <div className="group relative grid transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-lg lg:hover:bg-neutral-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg p-4 -m-4">
-                        <header className="sm:col-span-2 mt-1 mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500 sm:mb-0">
-                          {formatDateRange(role.startDate, role.endDate)}
-                        </header>
-                        <div className="sm:col-span-6">
-                          <h3 className="font-medium leading-snug text-neutral-100">
-                            <span className="group-hover:text-emerald-400 transition-colors">
-                              {role.title} · {inst.name}
-                            </span>
-                          </h3>
-                          {role.description && (
-                            <p className="mt-2 text-sm leading-normal">
-                              {role.description}
-                            </p>
-                          )}
-                          {role.skills && (
-                            <ul className="mt-2 flex flex-wrap gap-2" aria-label="Technologies used">
-                              {role.skills.map((skill, i) => (
-                                <li
-                                  key={i}
-                                  className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-medium leading-5 text-emerald-400"
-                                >
-                                  {skill}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      </div>
-                    </li>
-                  ))
-                )}
-              </ol>
-
-            </div>
-          </section>
-
-          {/* Education */}
-          <section
-            id="education"
-            className="mb-16 scroll-mt-16 lg:mb-24 lg:scroll-mt-24"
-            aria-label="Education"
-          >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-neutral-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-0 lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-neutral-100">
-                Education
-              </h2>
-            </div>
-            <ol className="group/list">
-              {educationData?.institutions.map((inst) =>
-                inst.roles.map((role) => (
-                  <li key={role.id} className="mb-12">
-                    <div className="group relative grid transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-lg lg:hover:bg-neutral-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg p-4 -m-4">
-                      <header className="sm:col-span-2 mt-1 mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500 sm:mb-0">
-                        {formatDateRange(role.startDate, role.endDate)}
-                      </header>
-                      <div className="sm:col-span-6">
-                        <h3 className="font-medium leading-snug text-neutral-100">
-                          <span className="group-hover:text-emerald-400 transition-colors">
-                            {role.title} · {inst.name}
-                          </span>
-                        </h3>
-                        {role.description && (
-                          <p className="mt-2 text-sm leading-normal">
-                            {role.description}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </li>
-                ))
-              )}
-            </ol>
-          </section>
+          {contentData.map((section) => (
+            <Section
+              key={section.title}
+              id={section.title.toLowerCase()}
+              title={section.title}
+              ariaLabel={section.title}
+            >
+              <RoleList institutions={section.institutions} />
+            </Section>
+          ))}
 
           {/* Footer */}
           <footer className="max-w-md pb-16 text-sm text-neutral-500">

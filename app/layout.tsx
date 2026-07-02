@@ -6,21 +6,22 @@ import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const siteUrl = "https://theoarcher.me";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${generalData.name} - ${generalData.jobTitle}`,
   description: generalData.about[0],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "",
+    url: "/",
     siteName: `${generalData.name} - ${generalData.jobTitle}`,
     title: `${generalData.name} - ${generalData.jobTitle}`,
     description: generalData.about[0],
     images: [
       {
-        url: "",
-        width: 1200,
-        height: 630,
+        url: "/images/profile.jpg",
         alt: `${generalData.name} - ${generalData.jobTitle}`,
       },
     ],
