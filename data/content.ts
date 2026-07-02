@@ -17,7 +17,7 @@ export const contentData: ContentData = [
           title: "Full Stack Developer",
           startDate: '2021-12-01',
           endDate: '2024-10-01',
-          description: "Rewrote Salesforce Commerce Cloud front-end code on thewarehouse.co.nz and noelleeming.co.nz to fix a long tail of slow cart and checkout load times, worst on large baskets. Built the integration behind a loyalty programme that now serves a million users, and introduced ship-to-store as a delivery option to shift purchases towards local stores.",
+          description: "Made Salesforce Commerce Cloud back-end changes on thewarehouse.co.nz and noelleeming.co.nz to fix a long tail of slow cart and checkout load times, worst on large baskets. Built the integration behind a loyalty programme that now serves a million users, and introduced ship-to-store as a delivery option to shift purchases towards local stores.",
           skills: ['JavaScript', 'TypeScript', 'Node.js', 'Jest', 'Salesforce Commerce Cloud']
         },
         {
